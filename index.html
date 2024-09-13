@@ -4,41 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafeteria do Lobinho</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body>
-
-    <div class="nav-bar">
-        <div class="inner">
-            <h2>Cafeteria do Lobinho</h2>
-    
-            <div class="nav-links">
-                <nav><a href="">Home</a></nav>
-                <nav><a href="">Profile</a></nav>
-                <nav><a href="">About us</a></nav>
-                <nav><a href="">Contact</a></nav>
-                <nav><a href="">Sign up</a></nav>
+<body class="fade-out">
+    <div class="container">
+        <div class="nav-bar">
+            <div class="inner">
+                <h2>Cafeteria do Lobinho</h2>
+                <nav class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">Profile</a>
+                    <a href="#">About us</a>
+                    <a href="#">Contact</a>
+                    <!-- Botões de Login e Sign Up (aparecem apenas quando não logado) -->
+                    <a href="login.html" id="loginLink">Login</a>
+                    <a href="signup.html" id="signupLink">Sign Up</a>
+                    <!-- Área do usuário (aparece apenas quando logado) -->
+                    <div class="user-info" id="userInfo" style="display: none;">
+                        <img src="icone-usuario.png" alt="Ícone do Usuário" id="userIcon" style="width:40px; height:40px; border-radius:50%;">
+                        <span id="userName">Usuário</span>
+                    </div>
+                </nav>
             </div>
         </div>
 
+        <main>
+            <h1>Landing Page</h1>
+            <h2>Creative Design</h2>
+            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia dicta explicabo accusamus quasi animi molestias porro molestiae. Asperiores nobis, nisi ratione consequuntur qui ex ullam quam animi, hic quo delectus.</span>
+            <div class="button-container">
+                <a href="signup.html" class="btn" id="signupButton">Sign Up</a>
+            </div>
+        </main>
+
+        <footer><span>&copy; Valeu natalina</span></footer>
     </div>
 
-    <main>
-        <h1>Landing Page</h1>
+    <script>
+        // Verifica se o usuário está logado
+        const loggedIn = sessionStorage.getItem('loggedIn');
+        const loginLink = document.getElementById('loginLink');
+        const signupLink = document.getElementById('signupLink');
+        const userInfo = document.getElementById('userInfo');
+        const userNameElement = document.getElementById('userName');
+        const signupButton = document.getElementById('signupButton');
 
-        <h2>Creative Design</h2>
+        if (loggedIn) {
+            const userName = sessionStorage.getItem('userName') || 'Usuário';
+            userNameElement.textContent = userName;
+            userInfo.style.display = 'flex'; // Exibe o bloco de user-info
+            loginLink.style.display = 'none'; // Oculta o botão de login
+            signupLink.style.display = 'none'; // Oculta o botão de sign up
+            signupButton.style.display = 'none'; // Oculta o botão de sign up na main
+        } else {
+            userInfo.style.display = 'none';
+            loginLink.style.display = 'block';
+            signupLink.style.display = 'block';
+            signupButton.style.display = 'block'; // Exibe o botão de sign up na main
+        }
 
-        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia dicta explicabo accusamus quasi animi molestias porro molestiae. Asperiores nobis, nisi ratione consequuntur qui ex ullam quam animi, hic quo delectus.</span>
+        // Adiciona transições de páginas
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.querySelector('body');
+            body.classList.add('fade-in');
 
-    </main>
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
 
-    <div class="login">
-        <a href="">sign up</a>
-        <a href="">login</a>
-    </div>
-
-    <footer><span>Valeu natalina</span></footer>
-
+                    body.classList.add('fade-out');
+                    setTimeout(function () {
+                        window.location.href = href;
+                    }, 500);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

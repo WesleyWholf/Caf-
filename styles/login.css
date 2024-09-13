@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #FAF3E0; /* Branco quente */
+    background-color: #4E342E; /* Marrom escuro */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1; /* Adicionado para transições */
+    transition: opacity 0.5s ease-in-out; /* Transição suave */
+}
+
+/* Estilo geral da área de login */
+.login-area {
+    background-color: #FAF3E0; /* Fundo branco quente */
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #4E342E; /* Marrom escuro para o texto */
+    justify-content: center;
+    align-items: center;
+}
+
+.login-area h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #4E342E; /* Marrom escuro */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #4E342E; /* Marrom escuro */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D7CCC8; /* Marrom claro para as bordas */
+    border-radius: 8px;
+    background-color: #FFF; /* Fundo branco */
+    color: #4E342E; /* Texto marrom escuro */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #795548; /* Marrom médio ao focar */
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #795548; /* Fundo marrom médio */
+    color: #FAF3E0; /* Texto branco quente */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #4E342E; /* Cor mais escura no hover */
+}
+
+.login-area p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-area p a {
+    color: #795548; /* Link marrom médio */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.login-area p a:hover {
+    color: #4E342E; /* Link marrom escuro ao passar o mouse */
+}
+
+/* Estilos para transições de página */
+body.fade-in {
+    opacity: 0; /* Página começa invisível */
+}
+
+body.fade-out {
+    opacity: 1; /* Página aparece gradualmente */
+    transition: opacity 0.5s ease-out; /* Transição ao sair da página */
+}
+
+body.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in; /* Transição ao carregar a página */
+}

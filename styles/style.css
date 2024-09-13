@@ -1,0 +1,144 @@
+/* Estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    color: #faf3e0;
+    background-color: #4e342e;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.nav-bar {
+    background-color: #795548;
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid #4e342e;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px #4e342e;
+}
+
+.inner {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav-links {
+    margin: 0 20px;
+    display: flex;
+    gap: 3rem;
+}
+
+.inner a {
+    color: #faf3e0;
+    text-decoration: none;
+    padding: 20px;
+    border: 1px solid #faf3e0;
+    border-radius: 8px;
+    background-color: #4e342e;
+    transition: 0.5s;
+}
+
+.inner a:hover {
+    background-color: #faf3e0;
+    color: #4e342e;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    width: 100vw;
+    height: 300px;
+    background-color: #faf3e0;
+    color: #4e342e;
+}
+
+main h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+    color: #4e342e;
+}
+
+main h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+main span {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: left;
+}
+
+.btn {
+    text-decoration: none;
+    color: #faf3e0;
+    padding: 30px 40px;
+    border: 2px solid #faf3e0;
+    border-radius: 8px;
+    background-color: #795548;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #faf3e0;
+    color: #795548;
+    border: 2px solid #795548;
+}
+
+footer {
+    background-color: #4e342e;
+    color: #faf3e0;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#userName {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Estilos de transições */
+body.fade-in {
+    opacity: 0;
+}
+
+body.fade-out {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+body.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
